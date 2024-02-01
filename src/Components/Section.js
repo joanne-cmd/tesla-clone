@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
-const Section = () => {
+const Section = ({ title, description, backgroundImg, leftBtnText, rightBtnText}) => {
+   
     return ( 
-        <Wrap>
+        <Wrap bgImage={backgroundImg}> 
             
             <ItemText>
-                <h1> Model-s</h1>
-                <p>Order Online for Touchies Delivery</p>
+                <h1> {title}</h1>
+                <p>{description}</p>
             </ItemText>
             <Buttons>
             <ButtonGroup>
                 <LeftButton>
-                    Custom Order
+                    {leftBtnText}
                 </LeftButton>
                 <RightButton>
-                    Existing inventory
+                    {rightBtnText}
                 </RightButton>
             </ButtonGroup>
             <DownArrow src="/images/images/down-arrow.svg"/>
@@ -37,7 +38,8 @@ background-image: url('/images/images/model-s.jpg');
 display:flex;
 flex-direction: column;
 justify-content: space-between;
-align-items: center
+align-items: center;
+background-image: ${props => `url("/images/images/${props.bgImage}")`}
 `
 const ItemText =styled.div`
 padding-top:15vh;
