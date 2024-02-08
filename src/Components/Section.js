@@ -1,26 +1,31 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 
 const Section = ({ title, description, backgroundImg, leftBtnText, rightBtnText}) => {
    
     return ( 
         <Wrap bgImage={backgroundImg}> 
+            <Fade bottom>
+                <ItemText>
+                    <h1> {title}</h1>
+                    <p>{description}</p>
+                </ItemText>
+            </Fade>
             
-            <ItemText>
-                <h1> {title}</h1>
-                <p>{description}</p>
-            </ItemText>
             <Buttons>
-            <ButtonGroup>
-                <LeftButton>
-                    {leftBtnText}
-                </LeftButton>
-                {rightBtnText &&
-                    <RightButton>
-                     {rightBtnText}
-                    </RightButton>
-                }
-               
-            </ButtonGroup>
+                <Fade bottom>
+                    <ButtonGroup>
+                        <LeftButton>
+                            {leftBtnText}
+                        </LeftButton>
+                        {rightBtnText &&
+                            <RightButton>
+                            {rightBtnText}
+                            </RightButton>
+                        }
+                    </ButtonGroup>
+                </Fade>
+          
             <DownArrow src="/images/images/down-arrow.svg"/>
             </Buttons>
             
@@ -32,6 +37,7 @@ const Section = ({ title, description, backgroundImg, leftBtnText, rightBtnText}
 export default Section;
 
 const Wrap = styled.div`
+
 width: 100vw;
 height:100vh;
 background-size: cover;
@@ -46,7 +52,8 @@ background-image: ${props => `url("/images/images/${props.bgImage}")`}
 `
 const ItemText =styled.div`
 padding-top:15vh;
-text-align:center;`
+text-align:center;
+z-index: -1;`
 const ButtonGroup= styled.div`
 display:flex;
 margin-bottom:30px;

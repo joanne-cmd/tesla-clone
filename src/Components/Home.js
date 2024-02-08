@@ -60,4 +60,5 @@ const Home = () => {
 export default Home;
 const Container = styled.div`
 height : 100hv;
+z-index: 10;
 `
