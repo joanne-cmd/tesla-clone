@@ -16,7 +16,7 @@ const Section = ({ title, description, backgroundImg, leftBtnText, rightBtnText}
                 </LeftButton>
                 {rightBtnText &&
                     <RightButton>
-                    {rightBtnText}
+                     {rightBtnText}
                     </RightButton>
                 }
                
